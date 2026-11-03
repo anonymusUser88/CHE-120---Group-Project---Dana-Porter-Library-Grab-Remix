@@ -2,7 +2,7 @@
 #University of Waterloo
 #December 8, 2026
 
-#MW = Marcus Wright, MS = Michael Small- Comments
+#MW = Marcus Wright, MS = Michael Small- Original Comments
 
 #SH = Sethumi Hapuarachchi
 #MF = Manal Fatima
@@ -17,7 +17,7 @@ from sys import exit
 #SH: Imports only the randint function from the random library
 from random import randint
 import random
-            
+
 #MW defines all the variables
 ground_y=0
 ground_x=0
