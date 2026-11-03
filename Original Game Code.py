@@ -2,8 +2,7 @@
 #University of Waterloo
 #December 8, 2026
 
-#MW = Marcus Wright - Original
-#MS = Michael Small- Original
+#MW = Marcus Wright, MS = Michael Small- Comments
 
 #SH = Sethumi Hapuarachchi
 #MF = Manal Fatima
@@ -14,6 +13,8 @@
 import pygame , sys
 from pygame import *
 from sys import exit
+
+#SH: Imports only the randint function from the random library
 from random import randint
 import random
             
@@ -60,6 +61,7 @@ pygame.display.set_caption("Dana Porter Book Grab")
 ground = pygame.image.load("Floor Design.png").convert_alpha()
 ground=pygame.transform.scale(ground, (52*tile_size,53*tile_size))
 ground_rect = ground.get_rect(topleft = (-7*tile_size,-18*tile_size))
+
 #MW bookshelf tile images
 table_img = pygame.image.load('Table top.png')
 br = pygame.image.load('Bookend Right.png').convert_alpha()
@@ -68,23 +70,28 @@ bu = pygame.image.load('Bookend up.png').convert_alpha()
 bd =pygame.image.load('Bookend Down.png').convert_alpha()
 bv =pygame.image.load('Bookmid vertical.png').convert_alpha()
 bh =pygame.image.load('Bookmid Horizontal.png').convert_alpha()
+
 #MW player forward postion image and rectangle
 player_forward = pygame.image.load("Move Forward.png").convert_alpha()
 player_forward = pygame.transform.scale(player_forward, (70,70))
 player_rect = player_forward.get_rect(center= (600,400))
 player_forward_rect = player_forward.get_rect(center= (600,400))
+
 #MW player back postion image and rectangle
 player_back = pygame.image.load("Move Back.png").convert_alpha()
 player_back = pygame.transform.scale(player_back, (70,70))
 player_back_rect = player_back.get_rect(center= (600,400))
+
 #MW player left postion image and rectangle
 player_left = pygame.image.load("Move Left.png").convert_alpha()
 player_left = pygame.transform.scale(player_left, (70,70))
 player_left_rect = player_left.get_rect(center= (600,400))
+
 #MW player right postion image and rectangle
 player_right = pygame.image.load("Move Right.png").convert_alpha()
 player_right = pygame.transform.scale(player_right, (70,70))
 player_right_rect = player_right.get_rect(center= (600,400))
+
 #MW micellaneous tiles
 chair = pygame.image.load("chair.png").convert_alpha()
 chair_up = pygame.image.load("chair up.png").convert_alpha()
@@ -250,7 +257,7 @@ pygame.mixer.music.play(-1, 0.0)
 
 
 
-#MW function that blits the intro screen
+#MW function that blits (render sprites onto a background - SH) the intro screen
 def intro ():
     #MW fills screen and blits two text objects
     screen.fill('White')
@@ -288,7 +295,7 @@ def display_score():
 #MW moves the screen to make it seem like te player is moving
 def drawFlour10(ground_x, ground_y, moveSpeed):
     #MW takes three int values, ground_x which is the x component of the movement, ground_y which is the y portion of the movement, and moveSpeed which is the speed at which the screen moves when the player presses the movement keys
-    #MW moves all te different objects in the game as the player presses movement keys to simulates player movement
+    #MW moves all the different objects in the game as the player presses movement keys to simulates player movement
     #MW Moves the ground rectangles
     ground_rect.y += ground_y
     ground_rect.x += ground_x  
@@ -431,7 +438,7 @@ def blueBook():
         screen.blit(blue_book, random_book1)
         if player_rect.colliderect(random_book1) and timesPlayed == 0:
             click_e()
-#This above function also tells the player to click e to pick the book up. This only occurs if the player has played once. 
+#This above function also tells the player to click e to pick the book usp. This only occurs if the player has played once. 
 
 def orangeBook():
     if book_apperence2:
@@ -548,6 +555,7 @@ def init_map():
                 tile = (img, img_rect)
                 #MW appends the tile to the list of all tiles for the map matrix
                 tile_list.append(tile)
+                
             elif tile == 2:
                 img = pygame.transform.scale(br, (tile_size, tile_size))
                 img_rect = img.get_rect(topright = (col_count*tile_size,row_count*tile_size))
