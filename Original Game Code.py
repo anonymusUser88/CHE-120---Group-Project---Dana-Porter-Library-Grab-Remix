@@ -1,7 +1,6 @@
 #Department of Chemical Engineering, Faculty of Engineering
 #University of Waterloo
-#November 3rd, 2026
-
+#07/11/2026
 #MW = Marcus Wright, MS = Michael Small- Original Comments
 
 #SH = Sethumi Hapuarachchi
@@ -145,7 +144,6 @@ def random_green (green_book):
     green_book_rect4 = green_book.get_rect(center = (2450,540))
     green_book_rect5 = green_book.get_rect(center = (3300,-1530))
     green_book_rect6 = green_book.get_rect(center = (800,-1260))
-
     return random.choice([green_book_rect1,green_book_rect2,green_book_rect3,green_book_rect4,green_book_rect5,green_book_rect6,])
 
 def random_magenta(magenta_book):
@@ -156,7 +154,6 @@ def random_magenta(magenta_book):
     magenta_book_rect5 = magenta_book.get_rect(center = (1800,1900))
     magenta_book_rect6 = magenta_book.get_rect(center = (220,1260))
     return random.choice([magenta_book_rect1,magenta_book_rect2,magenta_book_rect3,magenta_book_rect4,magenta_book_rect5,magenta_book_rect6,])
-
 
 def random_teal(teal_book):
     teal_book_rect1 = teal_book.get_rect(center = (-270,3060))
@@ -293,7 +290,7 @@ def display_score():
     return current_time
 
 #MW moves the screen to make it seem like te player is moving
-def drawFlour10(ground_x, ground_y, moveSpeed):
+def drawFloor10(ground_x, ground_y, moveSpeed):
     #MW takes three int values, ground_x which is the x component of the movement, ground_y which is the y portion of the movement, and moveSpeed which is the speed at which the screen moves when the player presses the movement keys
     #MW moves all the different objects in the game as the player presses movement keys to simulates player movement
     #MW Moves the ground rectangles
@@ -414,7 +411,7 @@ def movePlayer(player_pos, ground_x, ground_y):
         screen.blit(player_forward,player_forward_rect)
         player_pos = 4
     
-    #MW if the player is not moving their last positon is what is blit onto the screen
+    #MW if the player is not moving their last position is what is blit onto the screen
     else:
         if player_pos == 1:
             screen.blit(player_right,player_right_rect)
@@ -443,26 +440,38 @@ def blueBook():
 def orangeBook():
     if book_apperence2:
         screen.blit(orange_book, random_book2)
+        if player_rect.colliderect(random_book2) and timesPlayed == 0:
+            click_e()
 
 def greenBook():
     if book_apperence3:
         screen.blit(green_book, random_book3)
+        if player_rect.colliderect(random_book3) and timesPlayed == 0:
+            click_e()
 
 def magentaBook():
     if book_apperence4:
         screen.blit(magenta_book, random_book4)
+        if player_rect.colliderect(random_book4) and timesPlayed == 0:
+            click_e()
 
 def tealBook():
     if book_apperence5:
         screen.blit(teal_book, random_book5)
+        if player_rect.colliderect(random_book5) and timesPlayed == 0:
+            click_e()
         
 def redBook():
     if book_apperence6:
         screen.blit(red_book, random_book6)
+        if player_rect.colliderect(random_book6) and timesPlayed == 0:
+            click_e()
 
 def purpleBook():
     if book_apperence7: 
         screen.blit(purple_book, random_book7)
+        if player_rect.colliderect(random_book7) and timesPlayed == 0:
+            click_e()
 
 
 #MS - This function blits the collected books in the top of the screen.
@@ -778,7 +787,7 @@ while True:
         #MW fills the screen a base layer grey
         screen.fill("Grey")
         #MW calls upon all the necessary function for the game to run
-        drawFlour10(ground_x, ground_y, moveSpeed)
+        drawFloor10(ground_x, ground_y, moveSpeed)
         player_pos = movePlayer(player_pos, ground_x, ground_y)
         blueBook()
         orangeBook()
@@ -826,7 +835,7 @@ while True:
             score = 0
             #MW resets all the books you collected
             collected_books.clear()
-            #MW regets all of the random books
+            #MW resets all of the random books
             random_book1 = random_blue(blue_book)
             random_book2 = random_orange(orange_book)
             random_book3 = random_green(green_book)
