@@ -20,13 +20,11 @@ import random
 #MW defines all the variables
 ground_y=0
 ground_x=0
-blue_book_y = 0
-blue_book_x = 0
 pygame.init()
 screen = pygame.display.set_mode((1200,800))
 clock = pygame.time.Clock()
 tile_size = 90
-player_pos = 1
+player_pos = 1 # Tracks the position of the player, and thus, changes what the picture of the player's sprite is
 moveSpeed = 20
 score = 0
 start_time = 0
@@ -396,11 +394,11 @@ def movePlayer(player_pos, ground_x, ground_y):
     
     #Changes the player image that is blit onto the screen depending on the direction they are moving
     if ground_x < 0:
-        screen.blit(player_right,player_left_rect)
+        screen.blit(player_right,player_right_rect)
         player_pos = 1
     
     elif ground_x > 0:
-        screen.blit(player_left,player_right_rect)
+        screen.blit(player_left,player_left_rect)
         player_pos = 2
         
     elif ground_y < 0:
