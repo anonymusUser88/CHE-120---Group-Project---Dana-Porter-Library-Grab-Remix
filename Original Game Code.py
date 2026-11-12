@@ -72,23 +72,23 @@ bv =pygame.image.load('Bookmid vertical.png').convert_alpha()
 bh =pygame.image.load('Bookmid Horizontal.png').convert_alpha()
 
 #MW player forward postion image and rectangle
-player_forward = pygame.image.load("Move Forward.png").convert_alpha()
+player_forward = pygame.image.load("santa_up.png").convert_alpha()
 player_forward = pygame.transform.scale(player_forward, (70,70))
 player_rect = player_forward.get_rect(center= (600,400))
 player_forward_rect = player_forward.get_rect(center= (600,400))
 
 #MW player back postion image and rectangle
-player_back = pygame.image.load("Move Back.png").convert_alpha()
+player_back = pygame.image.load("santa_down.png").convert_alpha()
 player_back = pygame.transform.scale(player_back, (70,70))
 player_back_rect = player_back.get_rect(center= (600,400))
 
 #MW player left postion image and rectangle
-player_left = pygame.image.load("Move Left.png").convert_alpha()
+player_left = pygame.image.load("santa_left.png").convert_alpha()
 player_left = pygame.transform.scale(player_left, (70,70))
 player_left_rect = player_left.get_rect(center= (600,400))
 
 #MW player right postion image and rectangle
-player_right = pygame.image.load("Move Right.png").convert_alpha()
+player_right = pygame.image.load("santa_right.png").convert_alpha()
 player_right = pygame.transform.scale(player_right, (70,70))
 player_right_rect = player_right.get_rect(center= (600,400))
 
@@ -103,11 +103,11 @@ table = pygame.image.load("table.png").convert_alpha()
 
 #MS - Random Book Generator
 #After initiallizing the book images, I scaled them up to the same size as the tiles.
-blue_book = pygame.image.load('Blue Book.png')
+blue_book = pygame.image.load('blue_present.png')
 blue_book = pygame.transform.scale(blue_book, (tile_size, tile_size))
-orange_book = pygame.image.load('Orange Image.png')
+orange_book = pygame.image.load('orange_present.png')
 orange_book = pygame.transform.scale(orange_book, (tile_size, tile_size))
-green_book = pygame.image.load('Green Image.png')
+green_book = pygame.image.load('green_present.png')
 green_book = pygame.transform.scale(green_book, (tile_size, tile_size))
 magenta_book = pygame.image.load('Magenta Book.png')
 magenta_book = pygame.transform.scale(magenta_book, (tile_size, tile_size))
